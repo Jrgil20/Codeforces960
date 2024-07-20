@@ -3,14 +3,14 @@ def encontrar_mad(arreglo):
     Encuentra el Máximo Duplicado Apareciendo (MAD) en el arreglo.
     Si no existe tal número, devuelve 0.
     """
-    frecuencia = {}
+    Napariciones = {}
     mad = 0
     for num in arreglo:
-        if num in frecuencia:
-            frecuencia[num] += 1
+        if num in Napariciones:
+            Napariciones[num] += 1
         else:
-            frecuencia[num] = 1
-        if frecuencia[num] > 1:
+            Napariciones[num] = 1
+        if Napariciones[num] > 1:
             mad = max(mad, num)
     return mad
 
@@ -30,6 +30,5 @@ def resolver():
         n = int(input().strip())  # Tamaño del arreglo
         arreglo = list(map(int, input().strip().split()))  # El arreglo en sí
         print(procesar_arreglo(arreglo))
-
 
 resolver()
