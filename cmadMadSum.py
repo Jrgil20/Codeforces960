@@ -1,3 +1,7 @@
+"""
+    Esta solucion excede el tiempo de respuesta en el caso de prueba 3.
+"""
+
 def encontrar_mad(arreglo):
     """
     Encuentra el Máximo Duplicado Apareciendo (MAD) en el arreglo.
