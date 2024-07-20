@@ -1,35 +1,35 @@
-def find_mad(arr):
+def encontrar_mad(arreglo):
     """
-    Finds the Maximum Appearing Duplicate (MAD) in the array.
-    If no such number exists, returns 0.
+    Encuentra el Máximo Duplicado Apareciendo (MAD) en el arreglo.
+    Si no existe tal número, devuelve 0.
     """
-    frequency = {}
+    frecuencia = {}
     mad = 0
-    for num in arr:
-        if num in frequency:
-            frequency[num] += 1
+    for num in arreglo:
+        if num in frecuencia:
+            frecuencia[num] += 1
         else:
-            frequency[num] = 1
-        if frequency[num] > 1:
+            frecuencia[num] = 1
+        if frecuencia[num] > 1:
             mad = max(mad, num)
     return mad
 
-def process_array(arr):
+def procesar_arreglo(arreglo):
     """
-    Processes the array according to the given rules and returns the final sum.
+    Procesa el arreglo según las reglas dadas y devuelve la suma final.
     """
-    total_sum = 0
-    while any(arr):  # Continue until all elements are 0
-        total_sum += sum(arr)
-        arr = [find_mad(arr[:i+1]) for i in range(len(arr))]
-    return total_sum
+    suma_total = 0
+    while any(arreglo):  # Continuar hasta que todos los elementos sean 0
+        suma_total += sum(arreglo)
+        arreglo = [encontrar_mad(arreglo[:i+1]) for i in range(len(arreglo))]
+    return suma_total
 
-def solve():
-    t = int(input().strip())  # Number of test cases
+def resolver():
+    t = int(input().strip())  # Número de casos de prueba
     for _ in range(t):
-        n = int(input().strip())  # Size of the array
-        arr = list(map(int, input().strip().split()))  # The array itself
-        print(process_array(arr))
+        n = int(input().strip())  # Tamaño del arreglo
+        arreglo = list(map(int, input().strip().split()))  # El arreglo en sí
+        print(procesar_arreglo(arreglo))
 
 
-solve()
+resolver()
